@@ -1,8 +1,7 @@
-package webDriver;
-
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -10,11 +9,18 @@ public class Ff_ccw {
 
  public static void main(String[] args) {
   // TODO Auto-generated method stub
-FirefoxDriver fdriver=new FirefoxDriver();
+//FirefoxDriver fdriver=new FirefoxDriver;
+
+System.setProperty("webdriver.chrome.driver","C:/workspace/SeleniumPractice/external exe/chromedriver.exe");
+
+ChromeDriver fdriver= new ChromeDriver();
+
+	
+
 fdriver.manage().window().maximize();
 fdriver.get("http://s-login.cengage.com");
 fdriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-fdriver.findElementById("emailId").sendKeys("cnow_inst11@qaittest.com");
+fdriver.findElementById("emailId").sendKeys("cnow_imran@qaittest.com");
 
 //Or second way of writing the input is below
 /*WebElement uid = fdriver.findElementByName("email");
@@ -50,7 +56,7 @@ nextWindow(adamsT,fdriver);
  }
  
  //Method to work inside CNOW application.
- public static void nextWindow(boolean institute, FirefoxDriver fdriver)
+ public static void nextWindow(boolean institute, ChromeDriver fdriver)
  {
   String winHandleBefore=fdriver.getWindowHandle();
   
@@ -72,7 +78,7 @@ nextWindow(adamsT,fdriver);
  }
 
  //Method for course creation
- public static void courseCreation(FirefoxDriver fdriver)
+ public static void courseCreation(ChromeDriver fdriver)
  {
 	  fdriver.findElementByLinkText("Courses").click();
 	  fdriver.findElementByLinkText("Create a New Course").click();
@@ -87,7 +93,7 @@ nextWindow(adamsT,fdriver);
 	  Select textBook=new Select(fdriver.findElementById("bookSelector"));
 	  
 	  textBook.selectByVisibleText(btitle);
-	  String coursenm = "AutomatedCourse7";  
+	  String coursenm = "AutomatedCourse8";  
 	  fdriver.findElementById("name").sendKeys(coursenm);
 	  fdriver.findElementById("startDateTimeFormat").click();
 	  //fdriver.findElementByClassName("ui-state-default ui-state-highlight");	//Example of how compound class name is not permitted.	
@@ -99,7 +105,7 @@ nextWindow(adamsT,fdriver);
 	  
 	  WebElement yd=fdriver.findElementByXPath("//select[@class='ui-datepicker-year']");
 	  Select yeardrop= new Select(yd);
-	  yeardrop.selectByVisibleText("2015");
+	  yeardrop.selectByVisibleText("2016");
 	  
 	  fdriver.findElementByLinkText("12").click();
 	  fdriver.findElementByXPath("//button[contains(text(),'Done')]").click();
