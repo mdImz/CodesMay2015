@@ -1,5 +1,3 @@
-package webDriver;
-
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
@@ -95,7 +93,7 @@ public class SecondFlow_ccw {
 		   
 		   WebElement yd=fdriver.findElementByXPath("//select[@class='ui-datepicker-year']");
 		   Select yeardrop= new Select(yd);
-		   yeardrop.selectByVisibleText("2015");
+		   yeardrop.selectByVisibleText("2016");
 		   
 		   fdriver.findElementByLinkText("12").click();
 		   fdriver.findElementByXPath("//button[contains(text(),'Done')]").click();

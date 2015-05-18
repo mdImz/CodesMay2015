@@ -1,5 +1,3 @@
-package webDriver;
-
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
@@ -7,7 +5,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class CCW_CengageTemplate {
-
+//this wont run as csfi templates are not supported anymore.
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		FirefoxDriver fdriver=new FirefoxDriver();

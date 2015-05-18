@@ -1,5 +1,3 @@
-package webDriver;
-
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
@@ -77,7 +75,7 @@ public class Import_course_CCW {
 			fdriver.findElementById("processTypeImport").click();
 			fdriver.findElementById("createCourseNextStepButton").click();
 			WebElement fileInput= fdriver.findElementByXPath("//input[@name='file']");
-			fileInput.sendKeys("C://Users//mohammadimran//Downloads//Testing_Warren24_LTI_16Apr142014416.ecx");
+			fileInput.sendKeys("C:/Users/Qais/Downloads/AutomatedCourse12015518.ecx");
 			fdriver.findElementById("createCourseNextStepButton").click();
 			String coursenm= "imported course1";
 			fdriver.findElementById("name").clear();
@@ -95,7 +93,7 @@ public class Import_course_CCW {
 			   
 			   WebElement yd=fdriver.findElementByXPath("//select[@class='ui-datepicker-year']");
 			   Select yeardrop= new Select(yd);
-			   yeardrop.selectByVisibleText("2015");
+			   yeardrop.selectByVisibleText("2016");
 			   
 			   fdriver.findElementByLinkText("12").click();
 			   fdriver.findElementByXPath("//button[contains(text(),'Done')]").click();
